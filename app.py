@@ -28,11 +28,14 @@ def decifraMsg():
         r = request.json
         mensagem_cifrada = r['cifra']
         senha = r['senha']
+        if any(mensagem_cifrada.isalpha() for c in mensagem_cifrada):
+            return json.dumps({'mensagem': "Isto não é uma cifra Az/ reconhecível."})
+
         if len(senha) and len(mensagem_cifrada) > 0:
             msg = Azl.Decifra(mensagem_cifrada, senha)
             return json.dumps({'mensagem': msg})
         else:
-            return json.dumps({'cifra': "nd"})
+            return json.dumps({'mensagem': "É necessário uma senha e uma mensagem cifrada."})
 
 
 @app.route("/cifra", methods=['POST'])
@@ -45,7 +48,7 @@ def cifraMsg():
             cifra = Azl.Cifra(mensagem, senha)
             return json.dumps({'cifra': cifra})
         else:
-            return json.dumps({'cifra': "nd"})
+            return json.dumps({'cifra': "É necessário uma senha e uma mensagem."})
 
 
 if __name__ == "__main__":
