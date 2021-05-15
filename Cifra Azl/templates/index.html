@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Pagina.css') }}">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <title>Cifra Az/</title>
+</head>
+<body>
+     <div class="container-fluid d-flex justify-content-center" style="padding-top: 3%;">
+         <h1 class="titulo" style="font-size: 90px;">Cifra Az/</h1>
+     </div>
+     <div class="container-fluid d-flex justify-content-center" style="padding-top: 4%;">
+            <div class="row d-flex justify-content-center" id="grelhaPainel">
+
+                <div class="card">
+                    <img class="tumb" src="static/img/fecha.png" onclick="window.open('cifrar', '_blank');">
+                    <div class="card-body titulo"> <h4 class="card-title">Cifrar</h4></div>
+                </div>
+
+                <div class="card">
+                    <img class="tumb" src="static/img/abre.png" onclick="window.open('decifrar', '_blank');">
+                    <div class="card-body titulo"> <h4 class="card-title">Decifrar</h4></div>
+                </div>
+            </div>
+        </div>
+
+
+    <footer class="bg-primary">
+        Bruno Silva 2021
+    </footer>
+</body>
+
+
+</html>
